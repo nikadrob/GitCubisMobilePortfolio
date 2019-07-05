@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:CubisMobilePortfolio.Custom"
+             mc:Ignorable="d"
+             x:Class="CubisMobilePortfolio.Pages.LoginPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <BoxView Grid.Column="0" Grid.Row="0" BackgroundColor="{StaticResource toolbarBackground}"></BoxView>
+
+        <StackLayout Padding="20" Spacing="15" Grid.Column="0" Grid.Row="1">
+            <Label Text="Prijava" HorizontalOptions="StartAndExpand"
+                  Style="{StaticResource lblGrayLarge}"></Label>
+            <local:MyEntry  Style="{StaticResource txtLightGray}"></local:MyEntry>
+            <local:MyEntry  Style="{StaticResource txtLightGray}"></local:MyEntry>
+            <Button Style="{StaticResource btnBlue}" Text="Prihvati" Clicked="Button_Clicked"></Button>
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Style="{StaticResource lblBlackMedium}" Text="Zaboravili ste lozinku?"></Label>
+                <Label HorizontalOptions="End" Style="{StaticResource lblBlueMedium}" Text="Registracija"></Label>
+            </StackLayout>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

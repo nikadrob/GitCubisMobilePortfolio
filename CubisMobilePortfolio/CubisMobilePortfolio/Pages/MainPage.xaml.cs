@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CubisMobilePortfolio.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,23 @@ namespace CubisMobilePortfolio
         public MainPage()
         {
             InitializeComponent();
+
+            DoNavigation();
+        }
+
+        bool CheckLogin()
+        {
+            if (1 == 2)
+                return true;
+            else
+                return false;
+        }
+
+        async void DoNavigation()
+        {
+            bool isResult = CheckLogin();
+            if (!isResult)
+                await Navigation.PushModalAsync(new LoginPage());
         }
     }
 }
