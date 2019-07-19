@@ -1,4 +1,5 @@
-﻿using CubisMobilePortfolio.ViewModel;
+﻿using CubisMobilePortfolio.Services;
+using CubisMobilePortfolio.ViewModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -30,46 +31,45 @@ namespace CubisMobilePortfolio.Pages
             string xuser = txtUser.Text;
             string xpass = txtPass.Text;
 
-            if (DoCheckIn(xuser, xpass))
+            ApiData api = new ApiData();
+            if (api.DoLogIn(xuser, xpass))
             {
                 BusyIndicator.IsRunning = false;
                 await Navigation.PopModalAsync();
             }
             else
             {
+                txtPass.Text = "";
                 BusyIndicator.IsRunning = false;
                 await DisplayAlert("Prijava korisnika", "Neispravan unos korisničkog imena/ lozinke!", "OK");
             }
         }
 
-        private bool DoCheckIn(string xuser, string xpass)
-        {
-            //string serviceUrl = Path.Combine((string)Application.Current.Properties["BaseApiUrl"] + @"CubisLogin/AuthUser");
-            var client = new HttpClient();
-            client.BaseAddress = new Uri((string)Application.Current.Properties["BaseApiUrl"]);
+        //private bool DoLogIn(string xuser, string xpass)
+        //{
+        //    //string serviceUrl = Path.Combine((string)Application.Current.Properties["BaseApiUrl"] + @"CubisLogin/AuthUser");
+        //    var client = new HttpClient();
+        //    client.BaseAddress = new Uri((string)Application.Current.Properties["BaseApiUrl"]);
 
-            User user = new User();
-            user.Username = xuser;
-            user.Password = xpass;
+        //    User user = new User();
+        //    user.Username = xuser;
+        //    user.Password = xpass;
 
+        //    var json = JsonConvert.SerializeObject(user);
+        //    var content = new StringContent(json, Encoding.UTF8, "application/json");
+        //    var response = client.PostAsync(@"CubisLogin/AuthUser", content).Result;
 
+        //    Result result = JsonConvert.DeserializeObject<Result>(response.Content.ReadAsStringAsync().Result); 
+        //    Application.Current.Properties["GUID"] = result.payload;
 
-            var json = JsonConvert.SerializeObject(user);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = client.PostAsync(@"CubisLogin/AuthUser", content).Result;
-
-            Result result = JsonConvert.DeserializeObject<Result>(response.Content.ReadAsStringAsync().Result); 
-            Application.Current.Properties["GUID"] = result.payload;
-
-            if (result.response == "OK")
-                return true;
-            else
-            {
-                txtPass.Text = "";
-                return false;
-            }
-
-        }
+        //    if (result.response == "OK") 
+        //        return true;
+        //    else
+        //    {
+        //        txtPass.Text = "";
+        //        return false;
+        //    }
+        //}
 
         protected override bool OnBackButtonPressed()
         {
