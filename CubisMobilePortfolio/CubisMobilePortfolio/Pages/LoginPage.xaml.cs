@@ -45,32 +45,6 @@ namespace CubisMobilePortfolio.Pages
             }
         }
 
-        //private bool DoLogIn(string xuser, string xpass)
-        //{
-        //    //string serviceUrl = Path.Combine((string)Application.Current.Properties["BaseApiUrl"] + @"CubisLogin/AuthUser");
-        //    var client = new HttpClient();
-        //    client.BaseAddress = new Uri((string)Application.Current.Properties["BaseApiUrl"]);
-
-        //    User user = new User();
-        //    user.Username = xuser;
-        //    user.Password = xpass;
-
-        //    var json = JsonConvert.SerializeObject(user);
-        //    var content = new StringContent(json, Encoding.UTF8, "application/json");
-        //    var response = client.PostAsync(@"CubisLogin/AuthUser", content).Result;
-
-        //    Result result = JsonConvert.DeserializeObject<Result>(response.Content.ReadAsStringAsync().Result); 
-        //    Application.Current.Properties["GUID"] = result.payload;
-
-        //    if (result.response == "OK") 
-        //        return true;
-        //    else
-        //    {
-        //        txtPass.Text = "";
-        //        return false;
-        //    }
-        //}
-
         protected override bool OnBackButtonPressed()
         {
             return true;
