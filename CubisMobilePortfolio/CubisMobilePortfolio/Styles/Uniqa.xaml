@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="toolbarBackground">#0060aa</Color>
+    <Color x:Key="entryBackground">#ecf0f1</Color>
+    <Color x:Key="mediumBlue">#238bd2</Color>
+    <Color x:Key="lightBlue">#85c4ee</Color>
+    <Color x:Key="darkGrey">#535d5f</Color>
+    <Color x:Key="mediumGrey">#8e9da4</Color>
+    <Color x:Key="borderGrey">#e6dfcd</Color>
+    <Color x:Key="backGrey">#f0eee8</Color>
+    <Color x:Key="tekstBlue">#5d7ab4</Color>
+    <Color x:Key="darkRed">#a60d22</Color>
+    <x:Int32 x:Key="boderRadius">10</x:Int32>
+    <x:String x:Key="headImage">uniqa.png</x:String>
+    <!--Label-->
+    <Style x:Key="lblGrayLarge" TargetType="Label">
+        <Setter Property="TextColor" Value="#666666"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+    </Style>
+    <Style x:Key="lblBlueLarge" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource tekstBlue}"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+    </Style>
+    <Style x:Key="lblBlackMedium" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+    <Style x:Key="lblBlueMedium" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource mediumBlue}"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+    <Style x:Key="lblBlackSmall" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+    </Style>
+    <!--Entry-->
+    <Style x:Key="txtLightGray" TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="{StaticResource entryBackground}"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+    </Style>
+    <!--Buton-->
+    <Style x:Key="btnGray" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#cccccc"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="TextColor" Value="White"></Setter>
+    </Style>
+    <Style x:Key="btnBlue" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource mediumBlue}"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="TextColor" Value="White"></Setter>
+    </Style>
+    <Style x:Key="btnFrmOK" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource lightBlue}"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="TextColor" Value="White"></Setter>
+    </Style>
+    <Style x:Key="btnRed" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#983a47"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="TextColor" Value="White"></Setter>
+    </Style>
+    <Style x:Key="btnDarkGray" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource darkGrey}"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="TextColor" Value="White"></Setter>
+    </Style>
+</ResourceDictionary>

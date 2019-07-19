@@ -10,6 +10,8 @@ namespace CubisMobilePortfolio
         {
             InitializeComponent();
 
+            InitApplicationProperties();
+
             MainPage = new MainPage();
         }
 
@@ -26,6 +28,28 @@ namespace CubisMobilePortfolio
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        private void InitApplicationProperties()
+        {
+            Application.Current.Properties["ClientCompany"] = AppSettingsManager.Settings["ClientCompany"];
+
+            /* Definiranje Base Api URL */
+            switch (Application.Current.Properties["ClientCompany"].ToString())
+            {
+                case "UNIQA_TEST":
+                    Application.Current.Properties["BaseApiUrl"] = AppSettingsManager.Settings["SERVICE_UNIQA_TEST"];
+                    break;
+                case "OSIG_UNIQA_TEST":
+                    Application.Current.Properties["BaseApiUrl"] = AppSettingsManager.Settings["SERVICE_OSIG_UNIQA_TEST"];
+                    break;
+                case "WIENER_TEST":
+                    Application.Current.Properties["BaseApiUrl"] = AppSettingsManager.Settings["SERVICE_WIENER_TEST"];
+                    break;
+                case "OSIG_WIENER_TEST":
+                    Application.Current.Properties["BaseApiUrl"] = AppSettingsManager.Settings["SERVICE_OSIG_WIENER_TEST"];
+                    break;
+            }
         }
     }
 }

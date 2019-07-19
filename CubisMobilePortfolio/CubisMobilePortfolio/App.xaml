@@ -7,39 +7,9 @@
              x:Class="CubisMobilePortfolio.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="toolbarBackground">#df0a1e</Color>
-            <Color x:Key="entryBackground">#ecf0f1</Color>
-            <Color x:Key="lightBlue">#3598db</Color>
-            <x:Int32 x:Key="boderRadius">10</x:Int32>
-            <!--Label-->
-            <Style x:Key="lblGrayLarge" TargetType="Label">
-                <Setter Property="TextColor" Value="#666666"></Setter>
-                <Setter Property="FontSize" Value="20"></Setter>
-            </Style>
-            <Style x:Key="lblBlackMedium" TargetType="Label">
-                <Setter Property="TextColor" Value="Black"></Setter>
-                <Setter Property="FontSize" Value="14"></Setter>
-            </Style>
-            <Style x:Key="lblBlueMedium" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource lightBlue}"></Setter>
-                <Setter Property="FontSize" Value="14"></Setter>
-            </Style>
-            <!--Entry-->
-            <Style x:Key="txtLightGray" TargetType="Entry">
-                <Setter Property="BackgroundColor" Value="{StaticResource entryBackground}"></Setter>
-                <Setter Property="FontSize" Value="16"></Setter>
-            </Style>
-            <!--Buton-->
-            <Style x:Key="btnGray" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#cccccc"></Setter>
-                <Setter Property="FontSize" Value="18"></Setter>
-                <Setter Property="TextColor" Value="White"></Setter>
-            </Style>
-            <Style x:Key="btnBlue" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource lightBlue}"></Setter>
-                <Setter Property="FontSize" Value="16"></Setter>
-                <Setter Property="TextColor" Value="White"></Setter>
-            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Uniqa.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

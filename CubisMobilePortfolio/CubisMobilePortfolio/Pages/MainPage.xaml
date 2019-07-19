@@ -4,13 +4,76 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CubisMobilePortfolio.MainPage">
+             x:Class="CubisMobilePortfolio.MainPage"
+             BackgroundColor="{StaticResource backGrey}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--Header-->
+            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="{StaticResource toolbarBackground}">
+                <Image Margin="0, 28, 20, 20" HorizontalOptions="End" Aspect="Fill" Source="{StaticResource headImage}"></Image>
+            </StackLayout>
+            <!--Naslov-->
+            <StackLayout Padding="12, 5, 0, 0" Grid.Column="0" Grid.Row="1">
+                <Label Text="Prodajni izvještaji" HorizontalOptions="StartAndExpand"
+                  Style="{StaticResource lblGrayLarge}"></Label>
+            </StackLayout>
+            <!--Sadržaj-->
+            <StackLayout Grid.Column="0" Grid.Row="2" IsVisible="True">
+                <ListView SeparatorVisibility="None"  HasUnevenRows="True" x:Name="LvMenu" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ContentView Padding="10, 5">
+                                    <Frame OutlineColor="{StaticResource borderGrey}" Padding="0" BackgroundColor="White" CornerRadius="7">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                                <StackLayout Padding="15, 10">
+                                                    <Label Text="{Binding Opis}" Style="{StaticResource lblBlueLarge}"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                                                    <Label Text="{Binding Detalj}" Style="{StaticResource lblBlackSmall}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                                                    <Button Text="OK" Style="{StaticResource btnFrmOK}" HeightRequest="38" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"></Button>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Grid Grid.Row="0" Grid.Column="1">
+                                                <Image  Source="{Binding Image}" HeightRequest="150" WidthRequest="150" VerticalOptions="End" HorizontalOptions="End" Aspect="Fill">
+                                                </Image>
+                                                <BoxView BackgroundColor="Gray" Opacity="0.35"></BoxView>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout  x:Name="noDataStack" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="noData.png" HorizontalOptions="Center"></Image>
+                <Label  Text="Ne postoje ugovorene police u kategoriji:" FontSize="Small" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label x:Name="lblNoData" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+            <ActivityIndicator x:Name="BusyIndicator" HorizontalOptions="Center" Margin="0, 10, 0, 0" VerticalOptions="Center"
+                               Color="#cccccc" IsRunning="True"/>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <!--Footer-->
+            <StackLayout Grid.Column="0" Grid.Row="3" BackgroundColor="{StaticResource toolbarBackground}">
 
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

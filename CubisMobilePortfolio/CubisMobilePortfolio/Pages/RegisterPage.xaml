@@ -5,41 +5,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:CubisMobilePortfolio.Custom"
              mc:Ignorable="d"
-             x:Class="CubisMobilePortfolio.Pages.LoginPage">
+             x:Class="CubisMobilePortfolio.Pages.RegisterPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="500"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
         <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="{StaticResource toolbarBackground}">
             <Image Margin="0, 28, 20, 20" HorizontalOptions="End" Aspect="Fill" Source="{StaticResource headImage}"></Image>
         </StackLayout>
         <StackLayout Padding="20" Spacing="15" Grid.Column="0" Grid.Row="1">
-            <Label Text="Prijava" HorizontalOptions="StartAndExpand"
+            <Label Text="Registracija" HorizontalOptions="StartAndExpand"
                   Style="{StaticResource lblGrayLarge}"></Label>
-            <local:MyEntry x:Name="txtUser"  Style="{StaticResource txtLightGray}" Text="" Placeholder="Korisničko ime"></local:MyEntry>
+            <local:MyEntry x:Name="txtIme"   Style="{StaticResource txtLightGray}" Text="" Placeholder="Ime"></local:MyEntry>
+            <local:MyEntry x:Name="txtPrezime"  Style="{StaticResource txtLightGray}" Text="" Placeholder="Prezime"></local:MyEntry>
+            <local:MyEntry x:Name="txtEmail"  Style="{StaticResource txtLightGray}" Text="" Placeholder="E-mail"></local:MyEntry>
             <local:MyEntry x:Name="txtPass"  Style="{StaticResource txtLightGray}" Text="" IsPassword="True" Placeholder="Lozinka"></local:MyEntry>
-            <Button x:Name="btnLogin" Style="{StaticResource btnDarkGray}" Text="Prihvati" Clicked="btnLogin_Clicked"></Button>
+            <local:MyEntry x:Name="txtPass2"  Style="{StaticResource txtLightGray}" Text="" IsPassword="True" Placeholder="Ponovite lozinku"></local:MyEntry>
+            <Button x:Name="btnRegister" Style="{StaticResource btnDarkGray}" Text="Prihvati" Clicked="btnRegister_Clicked"></Button>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Zaboravili ste lozinku?" Style="{StaticResource lblBlackMedium}" HorizontalOptions="StartAndExpand" >
+                <Label Text="Već prijavljeni?" Style="{StaticResource lblBlackMedium}" HorizontalOptions="StartAndExpand" >
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLabelNewPassTapped" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-                </Label>
-
-                <Label Text="Registracija" Style="{StaticResource lblBlueMedium}" HorizontalOptions="End" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLabelRegisterTapped" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnLabelAlreadyTapped" NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
-            
-            <ActivityIndicator x:Name="BusyIndicator" HorizontalOptions="Center" Margin="0, 10, 0, 0" VerticalOptions="Center" Color="#cccccc" />
+
         </StackLayout>
     </Grid>
 </ContentPage>
